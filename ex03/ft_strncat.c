@@ -1,40 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehyoyee <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: tehyoyee <taehykim@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 21:22:14 by tehyoyee          #+#    #+#             */
-/*   Updated: 2021/09/16 21:22:17 by tehyoyee         ###   ########.fr       */
+/*   Created: 2021/09/19 19:55:47 by tehyoyee          #+#    #+#             */
+/*   Updated: 2021/09/19 19:55:51 by tehyoyee         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 
-
-int ft_strcmp(char *s1, char *s2)
+char *ft_strcat(char *dest, char *src, unsigned int nb)
 {
     int i;
+    int j;
 
     i = 0;
-    while (s1[i] != '\0')
-    {
-        if (s1[i] < s2[i])
-            return -1;
-        if (s1[i] > s2[i])
-            return 1;
+    j = 0;
+    while (dest[i] != '\0')
         i++;
+    while (src[j] != '\0' && j < nb)
+    {
+        dest[i + j] = src[j];
+        j++;
     }
-    return 0;
+    dest[i + j] = '\0';
+    return (dest);
 }
 
 int main(void)
 {
-    char    s1[10] = "abcde";
-    char    s2[10] = "abcde";
-
-    printf("%d", ft_strcmp(s1, s2));
+    char    dest[20] = "abcdef";
+    char    *src = "ghijk";
+    write(1, ft_strcat(dest, src, 3), 12);
 }
