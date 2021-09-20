@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tehyoyee <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: taehykim <taehykim@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/16 21:22:14 by tehyoyee          #+#    #+#             */
-/*   Updated: 2021/09/16 21:22:17 by tehyoyee         ###   ########.fr       */
+/*   Created: 2021/09/20 15:33:03 by taehykim          #+#    #+#             */
+/*   Updated: 2021/09/20 16:14:01 by taehykim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,18 @@
 #include <unistd.h>
 #include <string.h>
 
-
-int ft_strcmp(char *s1, char *s2)
+int	ft_strcmp(char *s1, char *s2)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while (s1[i] != '\0')
-    {
-        if (s1[i] < s2[i])
-            return -1;
-        if (s1[i] > s2[i])
-            return 1;
-        i++;
-    }
-    return 0;
-}
-
-int main(void)
-{
-    char    s1[10] = "abcde";
-    char    s2[10] = "abcde";
-
-    printf("%d", ft_strcmp(s1, s2));
+	i = 0;
+	while (s1[i] != '\0')
+	{
+		if (s1[i] < s2[i])
+			return (-1);
+		if (s1[i] > s2[i])
+			return (1);
+		i++;
+	}
+	return (0);
 }
