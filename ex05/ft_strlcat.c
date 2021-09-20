@@ -6,12 +6,9 @@
 /*   By: tehyoyee <taehykim@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 19:56:32 by tehyoyee          #+#    #+#             */
-/*   Updated: 2021/09/20 16:15:12 by taehykim         ###   ########.fr       */
+/*   Updated: 2021/09/20 20:16:09 by taehykim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
-#include <stdio.h>
 
 unsigned int	ft_len(char *c)
 {
@@ -26,11 +23,11 @@ unsigned int	ft_len(char *c)
 	return (i);
 }
 
-unsigned char	ft_strlcat(char *dest, char *src, int size)
+unsigned char	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	int	d_size;
-	int	s_size;
-	int	i;
+	unsigned int	d_size;
+	unsigned int	s_size;
+	unsigned int	i;
 
 	i = 0;
 	d_size = ft_len(dest);
@@ -47,10 +44,9 @@ unsigned char	ft_strlcat(char *dest, char *src, int size)
 		dest++;
 		i++;
 	}
-	printf("i = %d \n", i);
 	*dest = '\0';
-	if (size < d_size)
-		return (s_size + size);
-	else
+	if (d_size < size)
 		return (s_size + d_size);
+	else
+		return (s_size + size);
 }

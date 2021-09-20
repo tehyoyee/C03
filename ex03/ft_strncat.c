@@ -6,17 +6,14 @@
 /*   By: tehyoyee <taehykim@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 19:55:47 by tehyoyee          #+#    #+#             */
-/*   Updated: 2021/09/20 16:14:41 by taehykim         ###   ########.fr       */
+/*   Updated: 2021/09/20 17:11:40 by taehykim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
 char	*ft_strncat(char *dest, char *src, unsigned int nb)
 {
-	int	i;
-	int	j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	j = 0;

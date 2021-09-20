@@ -6,10 +6,9 @@
 /*   By: tehyoyee <taehykim@student.42seoul.kr      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/19 19:56:16 by tehyoyee          #+#    #+#             */
-/*   Updated: 2021/09/20 16:14:56 by taehykim         ###   ########.fr       */
+/*   Updated: 2021/09/20 17:13:43 by taehykim         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <unistd.h>
 
 char	*ft_strstr(char *str, char *to_find)
 {
@@ -17,6 +16,8 @@ char	*ft_strstr(char *str, char *to_find)
 	int	j;
 
 	i = 0;
+	if (!*to_find)
+		return (str);
 	while (str[i])
 	{
 		j = 0;
